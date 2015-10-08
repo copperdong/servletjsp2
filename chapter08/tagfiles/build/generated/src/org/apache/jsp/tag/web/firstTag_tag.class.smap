@@ -1,0 +1,11 @@
+SMAP
+firstTag_tag.java
+JSP
+*S JSP
+*F
++ 0 firstTag.tag
+WEB-INF/tags/firstTag.tag
+*L
+1:48
+3,5:50
+*E

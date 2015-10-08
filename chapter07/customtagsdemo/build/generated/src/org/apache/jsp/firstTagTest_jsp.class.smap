@@ -1,0 +1,12 @@
+SMAP
+firstTagTest_jsp.java
+JSP
+*S JSP
+*F
++ 0 firstTagTest.jsp
+firstTagTest.jsp
+*L
+1,10:49
+10:80,4
+10,3:60
+*E

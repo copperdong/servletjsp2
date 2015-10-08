@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 19 11:46:19 EDT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.3 - (1557168): instance a816c00e-014f-e648-dd96-000006818ec8 
+on database directory /home/budi2020/workspace/servletjsp2-apps/jdbc/testdb with class loader sun.misc.Launcher$AppClassLoader@2503dbd3 
+Loaded from file:/home/budi2020/jdk1.8.0_25/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_25-b17
+user.dir=/home/budi2020/workspace/servletjsp2-apps/jdbc
+os.name=Linux
+os.arch=amd64
+os.version=3.13.0-55-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

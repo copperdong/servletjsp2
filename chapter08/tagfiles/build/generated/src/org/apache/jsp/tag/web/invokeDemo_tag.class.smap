@@ -1,0 +1,12 @@
+SMAP
+invokeDemo_tag.java
+JSP
+*S JSP
+*F
++ 0 invokeDemo.tag
+WEB-INF/tags/invokeDemo.tag
+*L
+1,11:62
+11:73
+12:74,5
+*E

@@ -1,0 +1,12 @@
+SMAP
+varDemoTest_jsp.java
+JSP
+*S JSP
+*F
++ 0 varDemoTest.jsp
+varDemoTest.jsp
+*L
+1,8:49
+8:56,5
+12,3:61
+*E

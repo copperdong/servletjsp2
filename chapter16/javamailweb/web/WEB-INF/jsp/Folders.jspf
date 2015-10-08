@@ -1,0 +1,16 @@
+<div style="float:left;border:1px solid gray;padding:10px">
+    <p><a class="composeButton" href="compose">Compose</a></p>
+    <c:forEach var="f" items="${folders}">
+        <p style="padding:0px;margin:0px">
+            <c:if test="${folder==f.fullName}">
+                <a href="main?folder=${f.fullName}"
+                    style="color:red;text-decoration:none;font-weight:bold"    
+                    >${f.name} (${messageCount})
+                </a>
+            </c:if>
+            <c:if test="${folder!=f.fullName}">
+                <a href="main?folder=${f.fullName}">${f.name}</a>
+            </c:if>
+        </p>
+    </c:forEach>
+</div>

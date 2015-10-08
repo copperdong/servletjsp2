@@ -1,0 +1,12 @@
+SMAP
+selectElementTagTest_jsp.java
+JSP
+*S JSP
+*F
++ 0 selectElementTagTest.jsp
+selectElementTagTest.jsp
+*L
+8:100
+9:101,6
+10:107
+*E

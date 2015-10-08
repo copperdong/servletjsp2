@@ -1,0 +1,14 @@
+SMAP
+dataFormatterTagTest_jsp.java
+JSP
+*S JSP
+*F
++ 0 dataFormatterTagTest.jsp
+dataFormatterTagTest.jsp
+*L
+1,8:49
+8:83,6
+10,4:58
+13:96,7
+17,3:63
+*E

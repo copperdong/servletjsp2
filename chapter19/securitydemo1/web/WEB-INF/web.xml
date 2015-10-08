@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- restricts access to JSP pages -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSP pages</web-resource-name>
+            <url-pattern>*.jsp</url-pattern>
+        </web-resource-collection>
+        <!-- must have auth-constraint, otherwise the
+            specified web resources will not be restricted -->
+        <auth-constraint/>
+    </security-constraint>
+</web-app>

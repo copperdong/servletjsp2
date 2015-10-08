@@ -1,0 +1,12 @@
+SMAP
+varDemo_tag.java
+JSP
+*S JSP
+*F
++ 0 varDemo.tag
+WEB-INF/tags/varDemo.tag
+*L
+1,12:51
+12:63
+13:64,4
+*E

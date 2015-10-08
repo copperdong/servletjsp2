@@ -1,0 +1,12 @@
+SMAP
+reverse2_jsp.java
+JSP
+*S JSP
+*F
++ 0 reverse2.jsp
+reverse2.jsp
+*L
+1,8:50
+8:57,2
+9,2:59
+*E

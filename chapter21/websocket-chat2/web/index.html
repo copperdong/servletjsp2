@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            var ws = null;
+            function debug(s) {
+                var d = document.getElementById("debug");
+                d.innerHTML = s + "<br/>" + d.innerHTML;
+            }
+            function onOpen() {
+                debug("You are now connected.");
+            }
+            function onReceivingMessage(evt) {
+                debug(evt.data);
+            }
+
+            function onClose() {
+                debug("Connection closed");
+            }
+            function connect() {
+                var userName = prompt("Your name?");
+                if (userName.trim()=='') {
+                    alert("Invalid username.");
+                    return;
+                }
+                if (!("WebSocket" in window)) {
+                    debug("WebSocket is not supported by your browser");
+                    return;
+                }
+                // if already connected, close the existing connection
+                if (ws && ws.readyState == ws.OPEN) {
+                    debug("You're already connected. Closing connection...")
+                    ws.close()
+                }
+                var uri = "ws://" + document.location.host 
+                        + document.location.pathname + "chat2?room="
+                        + getSelectedRoom()
+                        + "&userName=" 
+                        + userName;
+                ws = new WebSocket(uri);
+                ws.onopen = onOpen;
+                ws.onmessage = onReceivingMessage;
+                ws.onclose = onClose;
+            }
+            
+            function sendMessage() {
+                var msg = document.getElementById("msg").value;
+                ws.send(msg);
+            }
+            
+            function getSelectedRoom() {
+                var elements = document.getElementsByName("room");
+                var length = elements.length;
+                for (var i=0; i<length; i++) {
+                    if (elements[i].checked) {
+                        return elements[i].value;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="debug" 
+             style="height:200px;overflow:scroll;background:#80ed80"></div>
+        <div>
+            <p>Chat room: 
+                <input type="radio" id="room" name="room" 
+                       value="giants" checked/>Giants
+                <input type="radio" id="room" name="room" 
+                       value="superheroes">Superheroes
+            </p>
+            <p>
+                <a href="javascript:connect()">Connect</a></p>
+            <p>
+                <input id="msg"/>
+                <button onclick="javascript:sendMessage()">Send</button>
+            </p>
+        </div>
+    </body>
+</html>

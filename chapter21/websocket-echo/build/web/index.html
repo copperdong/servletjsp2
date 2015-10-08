@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            function debug(s) {
+                var d = document.getElementById("debug");
+                d.innerHTML = d.innerHTML + "<br/>" + s;
+            }
+            function sendMessage(msg)
+            {
+                if (!("WebSocket" in window)) {
+                    debug("Your browser does not support WebSocket.");
+                    return;
+                }
+                var uri = "ws://" + document.location.host 
+                        + document.location.pathname + "echo";
+                var ws = new WebSocket(uri);
+                ws.onopen = function () {
+                    debug("Connected.");
+                    ws.send("Hello");
+
+                };
+
+                ws.onmessage = function (evt) {
+                    debug("Received: " + evt.data);
+                };
+
+                ws.onclose = function () {
+                    debug("Connection closed.");
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <a href="javascript:sendMessage()">Send Message</a>
+        <div id="debug"></div>
+    </body>
+</html>

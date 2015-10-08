@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            var ws = null;
+            function debug(s) {
+                var d = document.getElementById("debug");
+                d.innerHTML = s + "<br/>" + d.innerHTML;
+            }
+            function onOpen() {
+                debug("You are now connected.");
+            }
+            function onReceivingMessage(evt) {
+                debug(evt.data);
+            }
+
+            function onClose() {
+                debug("Connection closed");
+            }
+            function connect() {
+                if (!("WebSocket" in window)) {
+                    debug("WebSocket is not supported by your browser");
+                    return;
+                }
+                // if already connected, close the existing connection
+                if (ws && ws.readyState == ws.OPEN) {
+                    debug("You're already connected. Closing connection...")
+                    ws.close()
+                }
+                var uri = "ws://" + document.location.host 
+                        + document.location.pathname + "chat";
+                ws = new WebSocket(uri);
+                ws.onopen = onOpen;
+                ws.onmessage = onReceivingMessage;
+                ws.onclose = onClose;
+            }
+            
+            function sendMessage() {
+                var msg = document.getElementById("msg").value;
+                ws.send(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="debug" 
+             style="height:200px;overflow:scroll;background:khaki"></div>
+        <div>
+            <p><a href="javascript:connect()">Connect</a></p>
+            <p>
+                <input id="msg"/>
+                <button onclick="javascript:sendMessage()">Send</button>
+            </p>
+        </div>
+    </body>
+</html>

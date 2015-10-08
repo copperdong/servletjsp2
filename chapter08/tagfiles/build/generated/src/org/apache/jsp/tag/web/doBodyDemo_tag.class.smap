@@ -1,0 +1,10 @@
+SMAP
+doBodyDemo_tag.java
+JSP
+*S JSP
+*F
++ 0 doBodyDemo.tag
+WEB-INF/tags/doBodyDemo.tag
+*L
+1:46,5
+*E
